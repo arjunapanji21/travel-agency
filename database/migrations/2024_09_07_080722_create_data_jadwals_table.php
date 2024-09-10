@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('data_sopir_id');
             $table->bigInteger('harga_tiket');
             $table->integer('jumlah_penumpang');
+            $table->boolean('aktif')->default(1);
             $table->timestamps();
         });
     }

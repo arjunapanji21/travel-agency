@@ -16,7 +16,9 @@
             <div class="flex">
               <div class="ml-10 flex items-baseline space-x-4">
                 <a href="{{route('dashboard')}}" class="@if($title == 'Dashboard') bg-orange-900 @endif rounded-md px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                @if(Auth::check() && auth()->user()->role != "admin")
                 <a href="{{route('index_data_tiket')}}" class="@if($title == 'Tiket') bg-orange-900 @endif rounded-md px-3 py-2 text-sm font-medium text-orange-300 hover:bg-orange-700 hover:text-white">Tiket</a>
+                @endif
                 @if(Auth::check() && auth()->user()->role == "admin")
                 <a href="{{route('index_data_pemesanan')}}" class="@if($title == 'Pemesanan') bg-orange-900 @endif rounded-md px-3 py-2 text-sm font-medium text-orange-300 hover:bg-orange-700 hover:text-white">Pemesanan</a>
                 <a href="{{route('index_data_jadwal')}}" class="@if($title == 'Jadwal') bg-orange-900 @endif rounded-md px-3 py-2 text-sm font-medium text-orange-300 hover:bg-orange-700 hover:text-white">Jadwal</a>
@@ -58,11 +60,13 @@
                            <span class="ms-3">Dashboard</span>
                         </a>
                      </li>
+                     @if(Auth::check() && auth()->user()->role != "admin")
                      <li>
                         <a href="{{route('index_data_tiket')}}" class="flex items-center p-2 text-orange-900 rounded-lg dark:text-white @if($title == "Tiket") bg-orange-100 @endif hover:bg-orange-100 dark:hover:bg-orange-700 group">
                            <span class="flex-1 ms-3 whitespace-nowrap">Tiket</span>
                         </a>
                      </li>
+                     @endif
                      <li>
                         <a href="{{route('index_data_pemesanan')}}" class="flex items-center p-2 text-orange-900 rounded-lg dark:text-white @if($title == "Pemesanan") bg-orange-100 @endif hover:bg-orange-100 dark:hover:bg-orange-700 group">
                            <span class="flex-1 ms-3 whitespace-nowrap">Pemesanan</span>

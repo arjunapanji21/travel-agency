@@ -4,7 +4,7 @@
     
 <div class="mb-4 flex justify-between items-center">
     <h2 class="text-lg font-semibold">Tabel Data Pelanggan</h2>
-    <a href="" class="text-white bg-orange-700 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Tambah Data</a>
+    <a href="{{route('create_data_pelanggan')}}" class="text-white bg-orange-700 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Tambah Data</a>
 </div>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -22,9 +22,9 @@
                 <th scope="col" class="px-6 py-3">
                     No. Telepon
                 </th>
-                <th scope="col" class="px-6 py-3">
+                {{-- <th scope="col" class="px-6 py-3">
                     Action
-                </th>
+                </th> --}}
             </tr>
         </thead>
         <tbody>
@@ -42,9 +42,9 @@
                 <td class="px-6 py-4">
                     {{$row->no_telp}}
                 </td>
-                <td class="px-6 py-4">
+                {{-- <td class="px-6 py-4">
                     <a href="#" class="font-medium text-orange-600 dark:text-orange-500 hover:underline">Edit</a>
-                </td>
+                </td> --}}
             </tr>
             @endforeach
         </tbody>

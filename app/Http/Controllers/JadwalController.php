@@ -41,4 +41,13 @@ class JadwalController extends Controller
         DataJadwal::create($data);
         return redirect()->route('index_data_jadwal')->with('success', 'Data jadwal berhasil ditambahkan.');
     }
+    public function update($id, Request $request){
+        $data = $request->validate([
+            'aktif' => 'required',
+        ]);
+        $jadwal = DataJadwal::find($id);
+        $jadwal->aktif = $data['aktif'];
+        $jadwal->save();
+        return redirect()->back()->with('success', 'Data jadwal berhasil ditambahkan.');
+    }
 }

@@ -38,4 +38,30 @@ class TiketController extends Controller
         $dataJadwal->save();
         return redirect()->route('index_data_tiket')->with('success', 'Tiket berhasil di pesan, menunggu pembayaran.');
     }
+
+    public function upload_bukti_bayar($id, Request $request){
+        $tiket = Pemesanan::find($id);
+        $request->validate([
+            'file' => 'required'
+        ]);
+        $file = $request->file('file');
+        $extension = $file->extension();
+        $folder = public_path('uploads/bukti_bayar/');
+        $filename = $tiket->no_tiket . "_bukti_bayar." . $extension;
+        $file->move($folder, $filename);
+        $tiket->bukti_bayar = $filename;
+        $tiket->status = "Menunggu Konfirmasi";
+        $tiket->save();
+        return back()->with('success', 'Terima kasih, kami sedang melakukan konfirmasi pembayaran.');
+    }
+
+    public function update_status_tiket($id, Request $request){
+        $tiket = Pemesanan::find($id);
+        $data = $request->validate([
+            'status' => 'required'
+        ]);
+        $tiket->status = $data['status'];
+        $tiket->save();
+        return back()->with('success', 'Status tiket berhasil diupdate.');
+    }
 }

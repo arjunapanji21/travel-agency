@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('no_tiket');
             $table->bigInteger('user_id');
             $table->bigInteger('data_jadwal_id');
-            $table->enum('status', ['Menunggu Pembayaran', 'Menunggu Konfirmasi', 'Lunas', 'Batal']);
+            $table->enum('status', ['Menunggu Pembayaran', 'Menunggu Konfirmasi', 'Lunas', 'Batal', 'Expired']);
             $table->string('bukti_bayar')->nullable();
             $table->timestamps();
         });

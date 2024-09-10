@@ -4,7 +4,7 @@
     
 <div class="mb-4 flex justify-between items-center">
     <h2 class="text-lg font-semibold">Tabel Data Kendaraan</h2>
-    <a href="" class="text-white bg-orange-700 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Tambah Data</a>
+    <a href="{{route('create_data_kendaraan')}}" class="text-white bg-orange-700 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Tambah Data</a>
 </div>
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -44,7 +44,7 @@
                     {{$row->nopol}}
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-orange-600 dark:text-orange-500 hover:underline">Edit</a>
+                    <a href="{{route('edit_data_kendaraan', $row->id)}}" class="font-medium text-orange-600 dark:text-orange-500 hover:underline">Edit</a>
                 </td>
             </tr>
             @endforeach
