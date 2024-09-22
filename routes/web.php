@@ -32,14 +32,17 @@ Route::prefix('in')->middleware('auth')->group(function(){
     Route::post('/data/jadwal/tambah/simpan', [JadwalController::class, 'store'])->name("store_data_jadwal");
     Route::get('/data/kendaraan', [KendaraanController::class, 'index'])->name("index_data_kendaraan");
     Route::get('/data/kendaraan/create', [KendaraanController::class, 'create'])->name("create_data_kendaraan");
+    Route::post('/data/kendaraan/store', [KendaraanController::class, 'store'])->name("store_data_kendaraan");
     Route::get('/data/kendaraan/{id}/edit', [KendaraanController::class, 'edit'])->name("edit_data_kendaraan");
     Route::post('/data/kendaraan/{id}/update', [KendaraanController::class, 'update'])->name("update_data_kendaraan");
     Route::get('/data/sopir', [SopirController::class, 'index'])->name("index_data_sopir");
     Route::get('/data/sopir/create', [SopirController::class, 'create'])->name("create_data_sopir");
+    Route::post('/data/sopir/store', [SopirController::class, 'store'])->name("store_data_sopir");
     Route::get('/data/sopir/{id}/edit', [SopirController::class, 'edit'])->name("edit_data_sopir");
     Route::post('/data/sopir/{id}/update', [SopirController::class, 'update'])->name("update_data_sopir");
     Route::get('/data/pelanggan', [PelangganController::class, 'index'])->name("index_data_pelanggan");
     Route::get('/data/pelanggan/create', [PelangganController::class, 'create'])->name("create_data_pelanggan");
+    Route::post('/data/pelanggan/store', [PelangganController::class, 'store'])->name("store_data_pelanggan");
     Route::get('/data/pelanggan/{id}/edit', [PelangganController::class, 'edit'])->name("edit_data_pelanggan");
     Route::post('/data/pelanggan/{id}/update', [PelangganController::class, 'update'])->name("update_data_pelanggan");
 });

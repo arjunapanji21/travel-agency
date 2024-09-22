@@ -3,7 +3,7 @@
 @section('content')
 <div>
     <h3 class="text-lg font-semibold">Tambah Data Sopir</h3>
-    <form action="{{'store_data_sopir'}}" enctype="multipart/form-data" method="post">
+    <form action="{{route('store_data_sopir')}}" enctype="multipart/form-data" method="post">
         @csrf
         <div class="border-b border-gray-900/10 pb-12">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
